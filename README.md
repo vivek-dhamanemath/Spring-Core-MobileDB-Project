@@ -10,6 +10,34 @@ This project demonstrates a simple Spring application with multiple layers inclu
 - `MobileRepository.java`: The repository class to interact with the database.
 - `Mobile.java`: The entity class representing a mobile.
 
+## Layers
+
+### Controller Layer
+
+- **MobileControler.java**: This layer handles the user inputs and interacts with the service layer. It contains methods to add, find, update, delete, and list all mobiles.
+
+### Service Layer
+
+- **MobileService.java**: This layer contains the business logic of the application. It interacts with the repository layer to perform CRUD operations. Methods include:
+  - `addMobile()`: Adds a new mobile.
+  - `findMobileById()`: Finds a mobile by its ID.
+  - `updateMobile()`: Updates an existing mobile.
+  - `deleteMobile()`: Deletes a mobile by its ID.
+  - `findAllMobile()`: Lists all mobiles.
+
+### Repository Layer
+
+- **MobileRepository.java**: This layer interacts with the database using JPA. It contains methods to perform CRUD operations on the mobile entity. Methods include:
+  - `addMobile(Mobile mobile)`: Adds a new mobile to the database.
+  - `findMobileById(int mobileId)`: Finds a mobile by its ID.
+  - `updateMobile(Mobile mobile)`: Updates an existing mobile.
+  - `deleteMobile(int mobileId)`: Deletes a mobile by its ID.
+  - `findAllMobile()`: Lists all mobiles.
+
+### Entity Layer
+
+- **Mobile.java**: This is the entity class representing a mobile. It contains fields like `mobileId`, `mobileModel`, `mobileBrand`, and `mobilePrice`.
+
 ## How to Run
 
 1. **Setup Database Configuration**: Ensure you have a MySQL database configured and update the `persistence.xml` file with your database details.
